@@ -32,7 +32,7 @@ Once you clone this repository, don't forget to pull the UnrealLiveLinkAugmenta 
 
 ## Content
 
-### Live Link Subjects
+### Using Live Link Subjects
 
 The L_LiveLinkAugmentaDemo_LiveLinkSubjects level shows an example of controlling scene actors transforms with the Live Link subjects.
 
