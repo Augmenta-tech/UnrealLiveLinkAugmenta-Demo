@@ -36,6 +36,10 @@ Once you clone this repository, don't forget to pull the UnrealLiveLinkAugmenta 
 
 The L_LiveLinkAugmentaDemo_LiveLinkSubjects level shows an example of controlling scene actors transforms with the Live Link subjects.
 
+### Using Augmenta Manager (coming soon)
+
+The L_LiveLinkAugmentaDemo_AugmentaManager level shows an example of using the AugmentaManager script to get the Augmenta Event in Blueprint and spawn a custom object at runtime.
+
 Augmenta Documentation
 -------------
 
