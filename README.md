@@ -36,7 +36,7 @@ Once you clone this repository, don't forget to pull the UnrealLiveLinkAugmenta 
 
 The L_LiveLinkAugmentaDemo_LiveLinkSubjects level shows an example of controlling scene actors transforms with the Live Link subjects.
 
-In this level, the Augmenta Scene, Augmenta Video Output and the 3 Augmenta Objects actors were placed beforehand with the LiveLinkController components. Their transforms are controlled at runtime by these components.
+In this level, the AugmentaScene, AugmentaVideoOutput and the 3 AugmentaObjects actors were placed beforehand, each with a LiveLinkController component. Their transforms are controlled by the Live Link data, through these components.
 
 ![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/Resources/Documentation/Images/AugmentaLiveLinkSubjects.jpg)
 
