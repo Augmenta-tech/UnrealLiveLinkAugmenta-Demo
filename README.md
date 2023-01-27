@@ -42,9 +42,9 @@ In this level, the AugmentaScene, AugmentaVideoOutput and the 3 AugmentaObjects 
 
 ### Using Augmenta Manager
 
-The L_LiveLinkAugmentaDemo_AugmentaManager level shows an example of using the AugmentaManager script to get the Augmenta Event in Blueprint and spawn a custom object at runtime.
+The L_LiveLinkAugmentaDemo_AugmentaManager level shows an example of using the AugmentaManager class to receive the Augmenta events in Blueprint and spawn custom objects at runtime.
 
-The blueprint BP_AugmentaVisualizer shows an example of how to use the Augmenta manager events to instantiate, update and destroy custom actors according to the incoming Augmenta stream. In this visualizer example, the entire process is done in blueprint but you could also connect to the Augmenta manager via a C++ class.
+The blueprint BP_AugmentaVisualizer shows an example of how to use the Augmenta manager events to instantiate, update and destroy custom actors according to the Augmenta events. In this visualizer example, the entire process is done in blueprint but you could also connect to the Augmenta manager via a C++ class.
 
 In this level, only the blueprints BP_AugmentaManager and BP_AugmentaVisualizer were placed beforehand. All the other actors are created at runtime by the AugmentaVisualizer, listening to the AugmentaManager events.
 
