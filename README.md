@@ -40,6 +40,10 @@ In this level, the AugmentaScene, AugmentaVideoOutput and the 3 AugmentaObjects 
 
 ![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/AugmentaLiveLinkSubjects.jpg)
 
+Note that in the following video, only the actors previously placed in the scene are updated when the corresponding Augmenta object is received in the Live Link window.
+
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSubjectsAnimation.gif)
+
 ### Using Augmenta Manager
 
 The L_LiveLinkAugmentaDemo_AugmentaManager level shows an example of using the AugmentaManager class to receive the Augmenta events in Blueprint and spawn custom objects at runtime.
@@ -49,6 +53,8 @@ The blueprint BP_AugmentaVisualizer shows an example of how to use the Augmenta 
 In this level, only the blueprints BP_AugmentaManager and BP_AugmentaVisualizer were placed beforehand. All the other actors are created at runtime by the AugmentaVisualizer, listening to the AugmentaManager events.
 
 ![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/AugmentaManagerAndVisualizer.jpg)
+
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/AugmentaManagerAnimation.gif)
 
 Augmenta Documentation
 -------------
