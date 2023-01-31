@@ -20,15 +20,15 @@ Once you clone this repository, don't forget to pull the UnrealLiveLinkAugmenta 
 
 1. Open the Live Link window by clicking Window -> Virtual Production -> Live Link.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/Resources/Documentation/Images/LiveLinkSourceCreation_1.jpg)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSourceCreation_1.jpg)
 
 2. In the Live Link window click on Source, LiveLinkAugmenta Source, enter your IP address, port and scene name, then click Add.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/Resources/Documentation/Images/LiveLinkSourceCreation_2.jpg)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSourceCreation_2.jpg)
 
 3. If you are receiving Augmenta data (from a node, Fusion, or the simulator), you should see the received Augmenta elements in the subjects list.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/Resources/Documentation/Images/LiveLinkSourceCreation_3.jpg)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSourceCreation_3.jpg)
 
 ## Content
 
@@ -38,7 +38,7 @@ The L_LiveLinkAugmentaDemo_LiveLinkSubjects level shows an example of controllin
 
 In this level, the AugmentaScene, AugmentaVideoOutput and the 3 AugmentaObjects actors were placed beforehand, each with a LiveLinkController component. Their transforms are controlled by the Live Link data, through these components.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/Resources/Documentation/Images/AugmentaLiveLinkSubjects.jpg)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/AugmentaLiveLinkSubjects.jpg)
 
 ### Using Augmenta Manager
 
@@ -48,7 +48,7 @@ The blueprint BP_AugmentaVisualizer shows an example of how to use the Augmenta 
 
 In this level, only the blueprints BP_AugmentaManager and BP_AugmentaVisualizer were placed beforehand. All the other actors are created at runtime by the AugmentaVisualizer, listening to the AugmentaManager events.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/Resources/Documentation/Images/AugmentaManagerAndVisualizer.jpg)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/AugmentaManagerAndVisualizer.jpg)
 
 Augmenta Documentation
 -------------
