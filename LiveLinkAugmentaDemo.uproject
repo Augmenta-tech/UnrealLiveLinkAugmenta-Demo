@@ -2,12 +2,27 @@
 	"FileVersion": 3,
 	"EngineAssociation": "5.1",
 	"Category": "",
-	"Description": "",
+	"Description": "Live Link Augmenta demonstration project",
 	"Modules": [
 		{
 			"Name": "LiveLinkAugmentaDemo",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "LiveLink",
+			"Enabled": true
+		},
+		{
+			"Name": "LiveLinkAugmenta",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Max",
+				"Linux"
+			]
 		}
 	]
 }
