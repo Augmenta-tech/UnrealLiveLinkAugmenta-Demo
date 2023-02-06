@@ -6,7 +6,7 @@ Example Unreal 5.1 project using the [UnrealLiveLinkAugmenta](https://github.com
 
 You will need to download the Live Link Augmenta plugin from the Unreal marketplace to use this project.
 
-For an example project including the Live Link Augmenta plugin sources in the project directly, please check the [master branch](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo).
+For an example project including the Live Link Augmenta plugin sources in the project directly, please check the [master](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo) branch.
 
 ## Setup
 
