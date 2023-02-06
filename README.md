@@ -4,15 +4,7 @@ Example Unreal 5.1 project using the [UnrealLiveLinkAugmenta](https://github.com
 
 ## Installation
 
-### Git User
-
-Once you clone this repository, don't forget to pull the UnrealLiveLinkAugmenta submodule using `$git submodule update --init --recursive`.
-
-### Non-Git User
-
-1. Download this repository and unzip it.
-
-2. Download the [UnrealLiveLinkAugmenta](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta) repository and unzip it in the `Plugins/UnrealLiveLinkAugmenta` folder.
+You will need to download the Live Link Augmenta plugin from the Unreal marketplace to use this project.
 
 ## Setup
 
