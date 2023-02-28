@@ -20,7 +20,7 @@ For an example project including the Live Link Augmenta plugin sources directly,
 
 ## Setup
 
-For more information on the plugin setup, please refer to the plugin [documentation](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/README.md).
+For more information on the Live Link Augmenta setup, please refer to the plugin [documentation](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/README.md).
 
 ## Content
 
