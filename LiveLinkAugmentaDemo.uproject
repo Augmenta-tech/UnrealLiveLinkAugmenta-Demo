@@ -3,26 +3,11 @@
 	"EngineAssociation": "5.1",
 	"Category": "",
 	"Description": "Live Link Augmenta demonstration project",
-	"Modules": [
-		{
-			"Name": "LiveLinkAugmentaDemo",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	],
 	"Plugins": [
-		{
-			"Name": "LiveLink",
-			"Enabled": true
-		},
 		{
 			"Name": "LiveLinkAugmenta",
 			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Max",
-				"Linux"
-			]
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/9c781e3f85d84dfa8c2c31a3a9620311"
 		}
 	]
 }
