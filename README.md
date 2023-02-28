@@ -6,9 +6,13 @@ Example Unreal 5.1 project using the [UnrealLiveLinkAugmenta](https://github.com
 
 This project uses the plugin sources directly. For an example project using the plugin from the Unreal marketplace, please check the [marketplace-demo](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/tree/marketplace-demo) branch.
 
-### Git User
+If you are not familiar with Git or C++ compilation in Unreal, we highly suggest you use the [marketplace demo](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/tree/marketplace-demo) instead.
 
-Once you clone this repository, don't forget to pull the UnrealLiveLinkAugmenta submodule using `$git submodule update --init --recursive`.
+### Git User 
+
+1. Clone this repository.
+
+2. Pull the UnrealLiveLinkAugmenta submodule using `$git submodule update --init --recursive`.
 
 ### Non-Git User
 
