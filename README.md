@@ -2,27 +2,25 @@
 
 Example Unreal 5.1 project using the [UnrealLiveLinkAugmenta](https://www.unrealengine.com/marketplace/en-US/product/live-link-augmenta) plugin.
 
-## Installation
+For an example project including the Live Link Augmenta plugin sources directly, please check the [master](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/tree/master) branch.
 
-You will need to download the Live Link Augmenta plugin from the Unreal marketplace to use this project.
+## Quick Start
 
-For an example project including the Live Link Augmenta plugin sources in the project directly, please check the [master](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo) branch.
+1. Download and install the plugin for Unreal 5.1 from the [marketplace](https://www.unrealengine.com/marketplace/en-US/product/live-link-augmenta).
+
+2. Clone or download this repository.
+
+3. Launch this project, it will open the L_LiveLinkAugmentaDemo_AugmentaManager level by default.
+
+4.a. Using the [Augmenta Simulator](https://github.com/Augmenta-tech/Augmenta-Simulator/releases) : Start the Augmenta Simulator and set its output ip address to your computer ip address (127.0.0.1 if you are running the simulator and Unreal on the same computer). Set the output port to 12000 (this is the default value).
+
+4.b. Using Augmenta Fusion : Add an output in Fusion with the ip address set to your computer ip address (127.0.0.1 if you are running Fusion and Unreal on the same computer). Set the output port to 12000 (this is the default value).
+
+5. Play the level in Unreal, you should see the Augmenta scene and objects from the simulator or Fusion appear in the scene after a few seconds.
 
 ## Setup
 
-### Creating the Live Link Augmenta Source
-
-1. Open the Live Link window by clicking Window -> Virtual Production -> Live Link.
-
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSourceCreation_1.jpg)
-
-2. In the Live Link window click on Source, LiveLinkAugmenta Source, enter your IP address, port and scene name, then click Add.
-
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSourceCreation_2.jpg)
-
-3. If you are receiving Augmenta data (from a node, Fusion, or the simulator), you should see the received Augmenta elements in the subjects list.
-
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSourceCreation_3.jpg)
+For more information on the plugin setup, please refer to the plugin [documentation](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta/blob/main/README.md).
 
 ## Content
 
