@@ -30,7 +30,7 @@ The L_LiveLinkAugmentaDemo_LiveLinkSubjects level shows an example of controllin
 
 In this level, the AugmentaScene, AugmentaVideoOutput and the 3 AugmentaObjects actors were placed beforehand, each with a LiveLinkController component. Their transforms are controlled by the Live Link data, through these components. Note that in the following video, only the actors previously placed in the scene are updated when the corresponding Augmenta object is received in the Live Link window.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/LiveLinkSubjectsAnimation.gif)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/marketplace-demo/Resources/Documentation/Images/LiveLinkSubjectsAnimation.gif)
 
 ### Using Augmenta Manager
 
@@ -40,7 +40,7 @@ The blueprint BP_AugmentaVisualizer shows an example of how to use the Augmenta 
 
 In this level, only the blueprints BP_AugmentaManager and BP_AugmentaVisualizer were placed beforehand. All the other actors are created at runtime by the AugmentaVisualizer, listening to the AugmentaManager events.
 
-![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/master/Resources/Documentation/Images/AugmentaManagerAnimation.gif)
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/marketplace-demo/Resources/Documentation/Images/AugmentaManagerAnimation.gif)
 
 Augmenta Documentation
 -------------
