@@ -3,15 +3,16 @@
 #pragma once
 
 #include "LiveLinkAugmentaData.h"
-#include "DisplayCluster/Public/Cluster/IDisplayClusterClusterEventListener.h"
+#include "Cluster/IDisplayClusterClusterEventListener.h"
 
 #include "CoreMinimal.h"
+#include "Cluster/IDisplayClusterClusterManager.h"
 #include "GameFramework/Actor.h"
 #include "LiveLinkAugmentaClusterManager.generated.h"
 
 /** Forward Declarations */
 class ALiveLinkAugmentaManager;
-class IDisplayClusterBlueprintAPI;
+class IDisplayClusterClusterManager;
 
 /** Delegates */
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAugmentaSceneUpdatedClusterEvent, const FLiveLinkAugmentaScene, AugmentaScene);
@@ -58,10 +59,16 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void SendSourceDestroyedClusterEvent();
 
-	TScriptInterface<IDisplayClusterBlueprintAPI> DisplayClusterAPI;
+	TMap<FString, FString> SerializeJsonAugmentaScene(const FLiveLinkAugmentaScene AugmentaScene);
+	FLiveLinkAugmentaScene DeserializeJsonAugmentaScene(const TMap<FString, FString> JSonMap);
 
-	TMap<FString, FString> SerializeAugmentaScene(const FLiveLinkAugmentaScene AugmentaScene);
-	FLiveLinkAugmentaScene DeserializeAugmentaScene(const TMap<FString, FString> JSonMap);
+	TMap<FString, FString> SerializeJsonAugmentaVideoOutput(const FLiveLinkAugmentaVideoOutput AugmentaVideoOutput);
+	FLiveLinkAugmentaVideoOutput DeserializeJsonAugmentaVideoOutput(const TMap<FString, FString> JSonMap);
+
+	TMap<FString, FString> SerializeJsonAugmentaObject(const FLiveLinkAugmentaObject AugmentaObject);
+	FLiveLinkAugmentaObject DeserializeJsonAugmentaObject(const TMap<FString, FString> JSonMap);
+
+	IDisplayClusterClusterManager* ClusterManager;
 
 public:
 
@@ -89,6 +96,8 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Augmenta|Events")
 	FAugmentaSourceDestroyedClusterEvent OnAugmentaSourceDestroyedCluster;
 
-	void OnClusterEventJson_Implementation(const FDisplayClusterClusterEventJson& Event);
+	UFUNCTION(BlueprintNativeEvent)
+	void OnClusterEventJson(const FDisplayClusterClusterEventJson& Event);
+
 
 };
