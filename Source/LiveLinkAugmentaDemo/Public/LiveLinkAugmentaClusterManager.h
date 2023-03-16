@@ -29,17 +29,25 @@ public:
 	// Sets default values for this actor's properties
 	ALiveLinkAugmentaClusterManager();
 
+	//Augmenta Manager to attach to.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta")
 	ALiveLinkAugmentaManager* AugmentaManager;
 
+	//Send only the transform, id and age data of the Augmenta objects. Only works with json cluster events.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
+	bool bSendReducedObjectData;
+
+	//Whether to use binary or json cluster events.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
+	bool bUseBinaryClusterEvents;
+
+	//Offset binary cluster events id by this value (to avoid overlapping with other binary events).
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
 	int BinaryEventIdOffset;
 
 protected:
 
 	bool bInitialized;
-
-	bool bUseBinaryClusterEvents;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

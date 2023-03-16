@@ -246,6 +246,8 @@ void ALiveLinkAugmentaClusterManager::OnClusterEventJson_Implementation(const FD
 	//FString message = "ClusterMessageReceived : " + Event.Name;
 	//GEngine->AddOnScreenDebugMessage(1, 2.0f, FColor::White, message);
 
+	//TRACE_CPUPROFILER_EVENT_SCOPE_STR("AugmentaClusterManager OnClusterEventJson");
+
 	if (Event.Name == "SceneUpdated")
 	{
 		OnAugmentaSceneUpdatedCluster.Broadcast(DeserializeJsonAugmentaScene(Event.Parameters));
@@ -276,6 +278,8 @@ void ALiveLinkAugmentaClusterManager::OnClusterEventBinary_Implementation(
 {
 	//FString message = "BinaryClusterMessageReceived : " + FString::FromInt(Event.EventId);
 	//GEngine->AddOnScreenDebugMessage(1, 2.0f, FColor::White, message);
+
+	//TRACE_CPUPROFILER_EVENT_SCOPE_STR("AugmentaClusterManager OnClusterEventBinary");
 
 	if (Event.EventId == BinaryEventIdOffset)
 	{
@@ -410,33 +414,8 @@ TMap<FString, FString> ALiveLinkAugmentaClusterManager::SerializeJsonAugmentaObj
 {
 	TMap<FString, FString> EventData;
 
-	EventData.Add("Frame", FString::FromInt(AugmentaObject.Frame));
 	EventData.Add("Id", FString::FromInt(AugmentaObject.Id));
-	EventData.Add("Oid", FString::FromInt(AugmentaObject.Oid));
 	EventData.Add("Age", FString::SanitizeFloat(AugmentaObject.Age));
-	EventData.Add("CentroidX", FString::SanitizeFloat(AugmentaObject.Centroid.X));
-	EventData.Add("CentroidY", FString::SanitizeFloat(AugmentaObject.Centroid.Y));
-	EventData.Add("VelocityX", FString::SanitizeFloat(AugmentaObject.Velocity.X));
-	EventData.Add("VelocityY", FString::SanitizeFloat(AugmentaObject.Velocity.Y));
-	EventData.Add("Orientation", FString::SanitizeFloat(AugmentaObject.Orientation));
-	EventData.Add("BoundingRectPosX", FString::SanitizeFloat(AugmentaObject.BoundingRectPos.X));
-	EventData.Add("BoundingRectPosY", FString::SanitizeFloat(AugmentaObject.BoundingRectPos.Y));
-	EventData.Add("BoundingRectSizeX", FString::SanitizeFloat(AugmentaObject.BoundingRectSize.X));
-	EventData.Add("BoundingRectSizeY", FString::SanitizeFloat(AugmentaObject.BoundingRectSize.Y));
-	EventData.Add("BoundingRectRotation", FString::SanitizeFloat(AugmentaObject.BoundingRectRotation));
-	EventData.Add("Height", FString::SanitizeFloat(AugmentaObject.Height));
-	EventData.Add("HighestX", FString::SanitizeFloat(AugmentaObject.Highest.X));
-	EventData.Add("HighestY", FString::SanitizeFloat(AugmentaObject.Highest.Y));
-	EventData.Add("Distance", FString::SanitizeFloat(AugmentaObject.Distance));
-	EventData.Add("Reflectivity", FString::SanitizeFloat(AugmentaObject.Reflectivity));
-	EventData.Add("LastUpdateTimeYear", FString::FromInt(AugmentaObject.LastUpdateTime.GetYear()));
-	EventData.Add("LastUpdateTimeMonth", FString::FromInt(AugmentaObject.LastUpdateTime.GetMonth()));
-	EventData.Add("LastUpdateTimeDay", FString::FromInt(AugmentaObject.LastUpdateTime.GetDay()));
-	EventData.Add("LastUpdateTimeHour", FString::FromInt(AugmentaObject.LastUpdateTime.GetHour()));
-	EventData.Add("LastUpdateTimeMinute", FString::FromInt(AugmentaObject.LastUpdateTime.GetMinute()));
-	EventData.Add("LastUpdateTimeSecond", FString::FromInt(AugmentaObject.LastUpdateTime.GetSecond()));
-	EventData.Add("LastUpdateTimeMillisecond", FString::FromInt(AugmentaObject.LastUpdateTime.GetMillisecond()));
-
 	EventData.Add("PositionX", FString::SanitizeFloat(AugmentaObject.Position.X));
 	EventData.Add("PositionY", FString::SanitizeFloat(AugmentaObject.Position.Y));
 	EventData.Add("PositionZ", FString::SanitizeFloat(AugmentaObject.Position.Z));
@@ -448,6 +427,33 @@ TMap<FString, FString> ALiveLinkAugmentaClusterManager::SerializeJsonAugmentaObj
 	EventData.Add("ScaleY", FString::SanitizeFloat(AugmentaObject.Scale.Y));
 	EventData.Add("ScaleZ", FString::SanitizeFloat(AugmentaObject.Scale.Z));
 
+	if (!bSendReducedObjectData) {
+		EventData.Add("Frame", FString::FromInt(AugmentaObject.Frame));
+		EventData.Add("Oid", FString::FromInt(AugmentaObject.Oid));
+		EventData.Add("CentroidX", FString::SanitizeFloat(AugmentaObject.Centroid.X));
+		EventData.Add("CentroidY", FString::SanitizeFloat(AugmentaObject.Centroid.Y));
+		EventData.Add("VelocityX", FString::SanitizeFloat(AugmentaObject.Velocity.X));
+		EventData.Add("VelocityY", FString::SanitizeFloat(AugmentaObject.Velocity.Y));
+		EventData.Add("Orientation", FString::SanitizeFloat(AugmentaObject.Orientation));
+		EventData.Add("BoundingRectPosX", FString::SanitizeFloat(AugmentaObject.BoundingRectPos.X));
+		EventData.Add("BoundingRectPosY", FString::SanitizeFloat(AugmentaObject.BoundingRectPos.Y));
+		EventData.Add("BoundingRectSizeX", FString::SanitizeFloat(AugmentaObject.BoundingRectSize.X));
+		EventData.Add("BoundingRectSizeY", FString::SanitizeFloat(AugmentaObject.BoundingRectSize.Y));
+		EventData.Add("BoundingRectRotation", FString::SanitizeFloat(AugmentaObject.BoundingRectRotation));
+		EventData.Add("Height", FString::SanitizeFloat(AugmentaObject.Height));
+		EventData.Add("HighestX", FString::SanitizeFloat(AugmentaObject.Highest.X));
+		EventData.Add("HighestY", FString::SanitizeFloat(AugmentaObject.Highest.Y));
+		EventData.Add("Distance", FString::SanitizeFloat(AugmentaObject.Distance));
+		EventData.Add("Reflectivity", FString::SanitizeFloat(AugmentaObject.Reflectivity));
+		EventData.Add("LastUpdateTimeYear", FString::FromInt(AugmentaObject.LastUpdateTime.GetYear()));
+		EventData.Add("LastUpdateTimeMonth", FString::FromInt(AugmentaObject.LastUpdateTime.GetMonth()));
+		EventData.Add("LastUpdateTimeDay", FString::FromInt(AugmentaObject.LastUpdateTime.GetDay()));
+		EventData.Add("LastUpdateTimeHour", FString::FromInt(AugmentaObject.LastUpdateTime.GetHour()));
+		EventData.Add("LastUpdateTimeMinute", FString::FromInt(AugmentaObject.LastUpdateTime.GetMinute()));
+		EventData.Add("LastUpdateTimeSecond", FString::FromInt(AugmentaObject.LastUpdateTime.GetSecond()));
+		EventData.Add("LastUpdateTimeMillisecond", FString::FromInt(AugmentaObject.LastUpdateTime.GetMillisecond()));
+	}
+
 	return EventData;
 }
 
@@ -456,36 +462,8 @@ FLiveLinkAugmentaObject ALiveLinkAugmentaClusterManager::DeserializeJsonAugmenta
 {
 	FLiveLinkAugmentaObject AugmentaObject;
 
-	FString TmpString = *EventData.Find("Frame");	AugmentaObject.Frame = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("Id");	 AugmentaObject.Id = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("Oid"); AugmentaObject.Oid = FCString::Atoi(*TmpString);
+	FString TmpString = *EventData.Find("Id");	 AugmentaObject.Id = FCString::Atoi(*TmpString);
 	TmpString = *EventData.Find("Age"); AugmentaObject.Age = FCString::Atof(*TmpString);
-	TmpString = *EventData.Find("CentroidX");	AugmentaObject.Centroid.X = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("CentroidY");	AugmentaObject.Centroid.Y = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("VelocityX");	AugmentaObject.Velocity.X = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("VelocityY");	AugmentaObject.Velocity.Y = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("Orientation"); AugmentaObject.Orientation = FCString::Atof(*TmpString);
-	TmpString = *EventData.Find("BoundingRectPosX"); AugmentaObject.BoundingRectPos.X = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("BoundingRectPosY"); AugmentaObject.BoundingRectPos.Y = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("BoundingRectSizeX"); AugmentaObject.BoundingRectSize.X = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("BoundingRectSizeY");	AugmentaObject.BoundingRectSize.Y = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("BoundingRectRotation"); AugmentaObject.BoundingRectRotation = FCString::Atof(*TmpString);
-	TmpString = *EventData.Find("Height"); AugmentaObject.Height = FCString::Atof(*TmpString);
-	TmpString = *EventData.Find("HighestX"); AugmentaObject.Highest.X = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("HighestY"); AugmentaObject.Highest.Y = FCString::Atod(*TmpString);
-	TmpString = *EventData.Find("Distance"); AugmentaObject.Distance = FCString::Atof(*TmpString);
-	TmpString = *EventData.Find("Reflectivity"); AugmentaObject.Reflectivity = FCString::Atof(*TmpString);
-
-	TmpString = *EventData.Find("LastUpdateTimeYear"); int Year = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("LastUpdateTimeMonth"); int Month = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("LastUpdateTimeDay"); int Day = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("LastUpdateTimeHour"); int Hour = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("LastUpdateTimeMinute"); int Minute = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("LastUpdateTimeSecond"); int Second = FCString::Atoi(*TmpString);
-	TmpString = *EventData.Find("LastUpdateTimeMillisecond"); int Millisecond = FCString::Atoi(*TmpString);
-	FDateTime LastUpdateTime{ Year, Month, Day, Hour, Minute, Second, Millisecond };
-	AugmentaObject.LastUpdateTime = LastUpdateTime;
-
 	TmpString = *EventData.Find("PositionX");		AugmentaObject.Position.X = FCString::Atod(*TmpString);
 	TmpString = *EventData.Find("PositionY");		AugmentaObject.Position.Y = FCString::Atod(*TmpString);
 	TmpString = *EventData.Find("PositionZ");		AugmentaObject.Position.Z = FCString::Atod(*TmpString);
@@ -496,6 +474,36 @@ FLiveLinkAugmentaObject ALiveLinkAugmentaClusterManager::DeserializeJsonAugmenta
 	TmpString = *EventData.Find("ScaleX");			AugmentaObject.Scale.X = FCString::Atod(*TmpString);
 	TmpString = *EventData.Find("ScaleY");			AugmentaObject.Scale.Y = FCString::Atod(*TmpString);
 	TmpString = *EventData.Find("ScaleZ");			AugmentaObject.Scale.Z = FCString::Atod(*TmpString);
+
+	if (!bSendReducedObjectData) {
+		TmpString = *EventData.Find("Frame");	AugmentaObject.Frame = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("Oid"); AugmentaObject.Oid = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("CentroidX");	AugmentaObject.Centroid.X = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("CentroidY");	AugmentaObject.Centroid.Y = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("VelocityX");	AugmentaObject.Velocity.X = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("VelocityY");	AugmentaObject.Velocity.Y = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("Orientation"); AugmentaObject.Orientation = FCString::Atof(*TmpString);
+		TmpString = *EventData.Find("BoundingRectPosX"); AugmentaObject.BoundingRectPos.X = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("BoundingRectPosY"); AugmentaObject.BoundingRectPos.Y = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("BoundingRectSizeX"); AugmentaObject.BoundingRectSize.X = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("BoundingRectSizeY");	AugmentaObject.BoundingRectSize.Y = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("BoundingRectRotation"); AugmentaObject.BoundingRectRotation = FCString::Atof(*TmpString);
+		TmpString = *EventData.Find("Height"); AugmentaObject.Height = FCString::Atof(*TmpString);
+		TmpString = *EventData.Find("HighestX"); AugmentaObject.Highest.X = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("HighestY"); AugmentaObject.Highest.Y = FCString::Atod(*TmpString);
+		TmpString = *EventData.Find("Distance"); AugmentaObject.Distance = FCString::Atof(*TmpString);
+		TmpString = *EventData.Find("Reflectivity"); AugmentaObject.Reflectivity = FCString::Atof(*TmpString);
+
+		TmpString = *EventData.Find("LastUpdateTimeYear"); int Year = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("LastUpdateTimeMonth"); int Month = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("LastUpdateTimeDay"); int Day = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("LastUpdateTimeHour"); int Hour = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("LastUpdateTimeMinute"); int Minute = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("LastUpdateTimeSecond"); int Second = FCString::Atoi(*TmpString);
+		TmpString = *EventData.Find("LastUpdateTimeMillisecond"); int Millisecond = FCString::Atoi(*TmpString);
+		FDateTime LastUpdateTime{ Year, Month, Day, Hour, Minute, Second, Millisecond };
+		AugmentaObject.LastUpdateTime = LastUpdateTime;
+	}
 
 	return AugmentaObject;
 }
