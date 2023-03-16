@@ -32,9 +32,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta")
 	ALiveLinkAugmentaManager* AugmentaManager;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
+	int BinaryEventIdOffset;
+
 protected:
 
-	bool bInitialized = false;
+	bool bInitialized;
+
+	bool bUseBinaryClusterEvents;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -60,13 +65,22 @@ protected:
 	void SendSourceDestroyedClusterEvent();
 
 	TMap<FString, FString> SerializeJsonAugmentaScene(const FLiveLinkAugmentaScene AugmentaScene);
-	FLiveLinkAugmentaScene DeserializeJsonAugmentaScene(const TMap<FString, FString> JSonMap);
+	FLiveLinkAugmentaScene DeserializeJsonAugmentaScene(const TMap<FString, FString> EventData);
 
 	TMap<FString, FString> SerializeJsonAugmentaVideoOutput(const FLiveLinkAugmentaVideoOutput AugmentaVideoOutput);
-	FLiveLinkAugmentaVideoOutput DeserializeJsonAugmentaVideoOutput(const TMap<FString, FString> JSonMap);
+	FLiveLinkAugmentaVideoOutput DeserializeJsonAugmentaVideoOutput(const TMap<FString, FString> EventData);
 
 	TMap<FString, FString> SerializeJsonAugmentaObject(const FLiveLinkAugmentaObject AugmentaObject);
-	FLiveLinkAugmentaObject DeserializeJsonAugmentaObject(const TMap<FString, FString> JSonMap);
+	FLiveLinkAugmentaObject DeserializeJsonAugmentaObject(const TMap<FString, FString> EventData);
+
+	TArray<uint8> SerializeBinaryAugmentaScene(const FLiveLinkAugmentaScene AugmentaScene);
+	FLiveLinkAugmentaScene DeserializeBinaryAugmentaScene(const TArray<uint8> EventData);
+
+	TArray<uint8> SerializeBinaryAugmentaVideoOutput(const FLiveLinkAugmentaVideoOutput AugmentaVideoOutput);
+	FLiveLinkAugmentaVideoOutput DeserializeBinaryAugmentaVideoOutput(const TArray<uint8> EventData);
+
+	TArray<uint8> SerializeBinaryAugmentaObject(const FLiveLinkAugmentaObject AugmentaObject);
+	FLiveLinkAugmentaObject DeserializeBinaryAugmentaObject(const TArray<uint8> EventData);
 
 	IDisplayClusterClusterManager* ClusterManager;
 
@@ -99,5 +113,7 @@ public:
 	UFUNCTION(BlueprintNativeEvent)
 	void OnClusterEventJson(const FDisplayClusterClusterEventJson& Event);
 
+	UFUNCTION(BlueprintNativeEvent)
+	void OnClusterEventBinary(const FDisplayClusterClusterEventBinary& Event);
 
 };
