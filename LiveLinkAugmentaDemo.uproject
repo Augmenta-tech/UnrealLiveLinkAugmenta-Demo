@@ -23,14 +23,6 @@
 			]
 		},
 		{
-			"Name": "nDisplay",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Linux"
-			]
-		},
-		{
 			"Name": "DisplayClusterLaunch",
 			"Enabled": true
 		}
