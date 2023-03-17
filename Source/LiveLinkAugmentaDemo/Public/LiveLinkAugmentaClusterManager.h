@@ -33,17 +33,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta")
 	ALiveLinkAugmentaManager* AugmentaManager;
 
-	//Send only the transform, id and age data of the Augmenta objects. Only works with json cluster events.
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
-	bool bSendReducedObjectData;
-
 	//Whether to use binary or json cluster events.
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta|Cluster Events")
 	bool bUseBinaryClusterEvents;
 
-	//Offset binary cluster events id by this value (to avoid overlapping with other binary events).
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta", AdvancedDisplay)
+	//Offset binary cluster events id by this value. Useful to avoid overlapping with other binary events.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta|Cluster Events")
 	int BinaryEventIdOffset;
+
+	//Send only the transform, id and age data of the Augmenta objects to improve performance. Only works with json cluster events.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Augmenta|Cluster Events")
+	bool bSendReducedObjectData;
 
 protected:
 
