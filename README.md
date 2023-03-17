@@ -66,8 +66,6 @@ While this approach is simple to implement, it is not well suited to handle a lo
 
 ### Synchronizing Augmenta Manager events using the Augmenta Cluster Manager
 
-> To keep this demo project C++ free, the AugmentaClusterManager class has only been added in the [master](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/tree/master) branch of this repository. Please refer to it if you wish to use the AugmentaClusterManager.
-
 The AugmentaClusterManager is a C++ class that binds to an existing AugmentaManager to send the event from the AugmentaManager through the cluster via cluster events. This allows to propagate the Augmenta events through the cluster in a synchronized manner. This framework is described in the diagram below.
 
 ![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/marketplace-demo/Resources/Documentation/Images/AugmentaClusterManagerDiagram.jpg)
