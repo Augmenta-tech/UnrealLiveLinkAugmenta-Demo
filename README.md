@@ -44,9 +44,9 @@ In this level, only the blueprints BP_AugmentaManager and BP_AugmentaVisualizer 
 
 ## Using Live Link Augmenta with nDisplay
 
-Please note that nDisplay is only supported on Windows and Linux currently.
-
 When using nDisplay and Augmenta, you have several options to synchronize the Augmenta data accross your nDisplay cluster detailed below.
+
+>Please note that nDisplay is only supported on Windows and Linux currently.
 
 ### Synchronizing Live Link subjects
 
