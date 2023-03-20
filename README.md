@@ -74,6 +74,17 @@ An example of this setup is shown in the level LiveLinkAugmentaDemo_AugmentaClus
 
 The AugmentaClusterManager propagate cluster events from the incoming Augmenta events from the AugmentaManager, while the AugmentaClusterVisualizer listen to the AugmentaClusterManager events for the instantiation and update of the visualization objects.
 
+### Testing nDisplay content
+
+If you run the nDisplay demo levels directly in the editor, you will not see anything happen. This is normal since those levels rely on nDisplay cluster events to propagate the Augmenta data, and the editor is not set up to receive those events.
+
+If you do not have a nDisplay cluster setup, or want to test nDisplay content locally before deploying to your cluster, you can use the [nDisplay Quick Launch Local Tool](https://docs.unrealengine.com/5.1/en-US/ndisplay-quick-launch-local-tool-in-unreal-engine/) plugin.
+
+Launching the nDisplay demo levels with this tool, you should see the Augmenta visualization in the created cluster node viewports as shown below.
+
+![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/marketplace-demo/Resources/Documentation/Images/AugmentaClusterManagerNDisplayClusterLaunch.jpg)
+
+
 Augmenta Documentation
 -------------
 
