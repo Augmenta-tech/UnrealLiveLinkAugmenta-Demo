@@ -8,6 +8,18 @@
 			"Name": "LiveLinkAugmenta",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/9c781e3f85d84dfa8c2c31a3a9620311"
+		},
+		{
+			"Name": "LiveLinkOverNDisplay",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Linux"
+			]
+		},
+		{
+			"Name": "DisplayClusterLaunch",
+			"Enabled": true
 		}
 	]
 }
