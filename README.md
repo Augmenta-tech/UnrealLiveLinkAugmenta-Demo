@@ -58,7 +58,7 @@ If you are using Live Link subjects, you can synchronize them easily, simply ena
 
 If you are using the Augmenta manager, you can synchronize the Augmenta events by sending cluster events from the Augmenta manager events.
 
-The LiveLinkAugmentaDemo_AugmentaManager_nDisplay shows an example of this approach. The blueprint BP_AugmentaVizualiser_nDisplay shows an example of this implementation, adapting the logic of the BP_AugmentaVisualizer to work with an nDisplay cluster.
+The blueprint BP_AugmentaVizualiser_nDisplay shows an example of this implementation, adapting the logic of the BP_AugmentaVisualizer to work with an nDisplay cluster.
 
 The main idea behind this implementation is to bind functions sending cluster events to the AugmentaManager events. Then listening to the incoming cluster events to perform the Augmenta visualization logic.
 
@@ -70,7 +70,7 @@ The AugmentaClusterManager is a C++ class that binds to an existing AugmentaMana
 
 ![](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/blob/marketplace-demo/Resources/Documentation/Images/AugmentaClusterManagerDiagram.jpg)
 
-An example of this setup is shown in the level LiveLinkAugmentaDemo_AugmentaClusterManager_nDisplay. Notice in the level there is an AugmentaManager, an AugmentaClusterManager, linked to the AugmentaManager, and an AugmentaClusterVisualizer, linked to the AugmentaClusterManager.
+An example of this setup is shown in the level LiveLinkAugmentaDemo_AugmentaClusterManager. Notice in the level there is an AugmentaManager, an AugmentaClusterManager receiving the events fropm the AugmentaManager, and an AugmentaVisualizer receiving the events from the AugmentaClusterManager.
 
 The AugmentaClusterManager propagate cluster events from the incoming Augmenta events from the AugmentaManager, while the AugmentaClusterVisualizer listen to the AugmentaClusterManager events for the instantiation and update of the visualization objects.
 
