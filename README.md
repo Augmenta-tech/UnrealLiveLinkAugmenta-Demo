@@ -10,7 +10,7 @@ For an example project including the Live Link Augmenta plugin sources directly,
 
 2. Clone or download this repository.
 
-3. Launch this project, it will open the L_LiveLinkAugmentaDemo_AugmentaManager level by default.
+3. Launch this project, it will open the LiveLinkAugmentaDemo_AugmentaManager level by default.
 
 4. Set up an Augmenta input either :
     1. Using the [Augmenta Simulator](https://github.com/Augmenta-tech/Augmenta-Simulator/releases) : Start the Augmenta Simulator and set its output ip address to your computer ip address (127.0.0.1 if you are running the simulator and Unreal on the same computer). Set the output port to 12000 (this is the default value).
