@@ -1,12 +1,12 @@
-# [Augmenta](https://www.augmenta.tech) [Unreal](https://www.unrealengine.com) [Live Link](https://docs.unrealengine.com/5.1/en-US/live-link-in-unreal-engine/) Demo
+# [Augmenta](https://www.augmenta.tech) [Unreal](https://www.unrealengine.com) [Live Link](https://docs.unrealengine.com/5.3/en-US/live-link-in-unreal-engine/) Demo
 
-Example Unreal 5.1 project using the [UnrealLiveLinkAugmenta](https://www.unrealengine.com/marketplace/en-US/product/live-link-augmenta) plugin.
+Example Unreal 5.3 project using the [UnrealLiveLinkAugmenta](https://www.unrealengine.com/marketplace/en-US/product/live-link-augmenta) plugin.
 
 For an example project including the Live Link Augmenta plugin sources directly, please check the [master](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta-Demo/tree/master) branch.
 
 ## Quick Start
 
-1. Download and install the plugin for Unreal 5.1 from the [marketplace](https://www.unrealengine.com/marketplace/en-US/product/live-link-augmenta).
+1. Download and install the plugin for Unreal 5.3 from the [marketplace](https://www.unrealengine.com/marketplace/en-US/product/live-link-augmenta).
 
 2. Clone or download this repository.
 
