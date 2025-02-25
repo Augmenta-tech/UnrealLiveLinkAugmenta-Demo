@@ -1,6 +1,6 @@
 # [Augmenta](https://www.augmenta-tech.com) [Unreal](https://www.unrealengine.com) [Live Link](https://docs.unrealengine.com/5.4/en-US/live-link-in-unreal-engine/) Demo
 
-Example Unreal 5.4 project using the [UnrealLiveLinkAugmenta](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta) plugin.
+Example Unreal 5.5 project using the [UnrealLiveLinkAugmenta](https://github.com/Augmenta-tech/UnrealLiveLinkAugmenta) plugin.
 
 ## Installation
 
